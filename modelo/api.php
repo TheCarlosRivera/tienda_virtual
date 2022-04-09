@@ -23,22 +23,22 @@ include '../controlador/conexion.php';
 	 	}
 	 	else if(isset($_GET['filtro']))
 	 	{
-	 		$this->consul = $this->ConexSQL->prepare("SELECT * FROM category WHERE name=:filtro");
+	 		$this->consul = $this->ConexSQL->prepare("SELECT * FROM product INNER JOIN category ON product.category=category.id WHERE category.name=:filtro AND url_image != '' ");
 			$this->consul->bindParam(":filtro", $_GET['filtro'], PDO::PARAM_STR);	 		
 	 	}
 	 	else
 	 	{
-	 		$this->consul = $this->ConexSQL->prepare("SELECT * FROM category");
+	 		$this->consul = $this->ConexSQL->prepare("SELECT * FROM product INNER JOIN category ON product.category=category.id WHERE url_image != '' ");
 
 	 	}
 
 				$this->consul->execute();
 				$this->consul->setFetchMode(PDO::FETCH_ASSOC);
-
 				header("HTTP/1.1 200 OK");
 				echo json_encode($this->consul->fetchAll());
 				exit;
-	 	
+
+
 	 }
 
 	}

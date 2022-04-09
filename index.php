@@ -63,171 +63,100 @@
 	</header>
 
 	<main class="main">
-		
-		<section id="contenedor__productos" class="contenedor__productos">
-
-			<div class="producto">
-				<img class="producto__img" src="vista/img/snack.webp">
-				<div class="producto__info">
-					<p class="producto__descrip">Cheezels - Evercrisp</p>
-					<p class="precio">$ 1.200</p>
-					<form class="form__cantidad">
-						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-						<button class="boton__cantidad">
-							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-						</button>
-						
-					</form>
-					
-				</div>
-			</div>
-
-			<div class="producto">
-				<img class="producto__img" src="vista/img/snack.webp">
-				<div class="producto__info">
-					<p class="producto__descrip">Cheezels - Evercrisp</p>
-					<p class="precio">$ 1.200</p>
-					<form class="form__cantidad">
-						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-						<button class="boton__cantidad">
-							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-						</button>
-						
-					</form>
-					
-				</div>
-			</div>
-
-			<div class="producto">
-				<img class="producto__img" src="vista/img/snack.webp">
-				<div class="producto__info">
-					<p class="producto__descrip">Cheezels - Evercrisp</p>
-					<p class="precio">$ 1.200</p>
-					<form class="form__cantidad">
-						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-						<button class="boton__cantidad">
-							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-						</button>
-						
-					</form>
-					
-				</div>
-			</div>
-
-			<div class="producto">
-				<img class="producto__img" src="vista/img/snack.webp">
-				<div class="producto__info">
-					<p class="producto__descrip">Cheezels - Evercrisp</p>
-					<p class="precio">$ 1.200</p>
-					<form class="form__cantidad">
-						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-						<button class="boton__cantidad">
-							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-						</button>
-						
-					</form>
-					
-				</div>
-			</div>
-
-			<div class="producto">
-				<img class="producto__img" src="vista/img/snack.webp">
-				<div class="producto__info">
-					<p class="producto__descrip">Cheezels - Evercrisp</p>
-					<p class="precio">$ 1.200</p>
-					<form class="form__cantidad">
-						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-						<button class="boton__cantidad">
-							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-						</button>
-						
-					</form>
-					
-				</div>
-			</div>
-
-			<div class="producto">
-				<img class="producto__img" src="vista/img/snack.webp">
-				<div class="producto__info">
-					<p class="producto__descrip">Cheezels - Evercrisp</p>
-					<p class="precio">$ 1.200</p>
-					<form class="form__cantidad">
-						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-						<button class="boton__cantidad">
-							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-						</button>
-						
-					</form>
-					
-				</div>
-			</div>
-
-			<div class="producto">
-				<img class="producto__img" src="vista/img/snack.webp">
-				<div class="producto__info">
-					<p class="producto__descrip">Cheezels - Evercrisp</p>
-					<p class="precio">$ 1.200</p>
-					<form class="form__cantidad">
-						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-						<button class="boton__cantidad">
-							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-						</button>
-						
-					</form>
-					
-				</div>
-			</div>
-
-			<div class="producto">
-				<img class="producto__img" src="vista/img/snack.webp">
-				<div class="producto__info">
-					<p class="producto__descrip">Cheezels - Evercrisp</p>
-					<p class="precio">$ 1.200</p>
-					<form class="form__cantidad">
-						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-						<button class="boton__cantidad">
-							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-						</button>
-						
-					</form>
-					
-				</div>
-			</div>
-
-
-
-
-		</section>
-
-			<p id="ValorId"></p>		
-			<p id="ValorName"></p>	
+			<section id="contenedor__productos" class="contenedor__productos"></section>
 	</main>
 
+
+	<?php
+
+		if(isset($_GET['id']) && !empty($_GET['id']))
+		{
+
+		}
+		else
+		{
+		?>
+			<script>
+					fetch('http://localhost/tienda_virtual/modelo/')
+					.then(datos=>datos.json())
+					.then(datos=>{
+							var resul = document.getElementById('contenedor__productos');
+							resul.innerHTML = "";
+						 
+							for(let dato of datos)
+							{
+								resul.innerHTML += `<div class='producto'>
+								<div class="contenedor__img">
+								<img class="producto__img" src="${dato.url_image}">
+								</div>
+								<div class="producto__info">
+								<p class="producto__descrip">${dato.name}</p>
+								<p class='precio'>$ ${dato.price}</p>
+								<form class="form__cantidad">
+								<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+								<button class="boton__cantidad">
+								<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+								/button>					
+								</form>					
+								</div>
+								</div>`;
+
+							}
+					});
+
+			</script>
+		<?php			
+		}
+
+
+	?>
 
 	<script>
 
 		function filtrar(e)
 		{
+			$("#contentLoader").removeClass("ocultar");
 			fetch('http://localhost/tienda_virtual/modelo/?filtro='+e)
 			.then(datos=>datos.json())
 			.then(datos=>{
-				       datos.forEach(valores => {
-           document.getElementById('ValorId').innerHTML = `${valores.id}`
-           document.getElementById('ValorName').innerHTML = `${valores.name}`
-       }); 
-				//document.getElementById('datos').innerHTML = ` Dolar: ${datos.dolar} - Euro: ${datos.euro}`
+							var resul = document.getElementById('contenedor__productos');
+							resul.innerHTML = "";
+						 
+							for(let dato of datos)
+							{
+								resul.innerHTML += `<div class='producto'>
+								<div class="contenedor__img">
+								<img class="producto__img" src="${dato.url_image}">
+								</div>
+								<div class="producto__info">
+								<p class="producto__descrip">${dato.name}</p>
+								<p class='precio'>$ ${dato.price}</p>
+								<form class="form__cantidad">
+								<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+								<button class="boton__cantidad">
+								<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+								/button>					
+								</form>					
+								</div>
+								</div>`;
+
+							}
+				$("#contentLoader").addClass("ocultar");
 			});
+
 		}
 
-/*
-		fetch('http://localhost/tienda_virtual/modelo/?id=3')
-		.then(datos=>datos.json())
-		.then(datos=>{
-			console.log(datos);
-			//document.getElementById('datos').innerHTML = ` Dolar: ${datos.dolar} - Euro: ${datos.euro}`
-		});
-*/
 	</script>
+
+
+<section id="contentLoader">
+	<div class="lds-ellipsis">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+</section>
 
 </body>
 </html>

@@ -20,3 +20,12 @@ function CloseMenu()
 	}, 200)
 
 }
+
+$(document).ready(function() {
+
+	//efectos del loader
+	setTimeout(function(){
+		$("#contentLoader").addClass("ocultar");
+	}, 1300);
+
+	})//fin de carga de documento
