@@ -1,10 +1,22 @@
-
+/*
+	abriendo menu
+*/
 function OpenMenu()
 {
-	$("#nav__filtro").addClass("mostrar");
+	setTimeout(function(){
+		$("#nav__filtro").addClass("mostrar");
+	}, 200)
+
 }
+
+/*
+	cerrando menu
+*/
 
 function CloseMenu()
 {
-	$("#nav__filtro").removeClass("mostrar");
+	setTimeout(function(){
+		$("#nav__filtro").removeClass("mostrar");
+	}, 200)
+
 }

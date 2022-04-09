@@ -63,7 +63,142 @@
 	</header>
 
 	<main class="main">
-		asd
+		
+		<section id="contenedor__productos" class="contenedor__productos">
+
+			<div class="producto">
+				<img class="producto__img" src="vista/img/snack.webp">
+				<div class="producto__info">
+					<p class="producto__descrip">Cheezels - Evercrisp</p>
+					<p class="precio">$ 1.200</p>
+					<form class="form__cantidad">
+						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+						<button class="boton__cantidad">
+							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+						</button>
+						
+					</form>
+					
+				</div>
+			</div>
+
+			<div class="producto">
+				<img class="producto__img" src="vista/img/snack.webp">
+				<div class="producto__info">
+					<p class="producto__descrip">Cheezels - Evercrisp</p>
+					<p class="precio">$ 1.200</p>
+					<form class="form__cantidad">
+						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+						<button class="boton__cantidad">
+							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+						</button>
+						
+					</form>
+					
+				</div>
+			</div>
+
+			<div class="producto">
+				<img class="producto__img" src="vista/img/snack.webp">
+				<div class="producto__info">
+					<p class="producto__descrip">Cheezels - Evercrisp</p>
+					<p class="precio">$ 1.200</p>
+					<form class="form__cantidad">
+						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+						<button class="boton__cantidad">
+							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+						</button>
+						
+					</form>
+					
+				</div>
+			</div>
+
+			<div class="producto">
+				<img class="producto__img" src="vista/img/snack.webp">
+				<div class="producto__info">
+					<p class="producto__descrip">Cheezels - Evercrisp</p>
+					<p class="precio">$ 1.200</p>
+					<form class="form__cantidad">
+						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+						<button class="boton__cantidad">
+							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+						</button>
+						
+					</form>
+					
+				</div>
+			</div>
+
+			<div class="producto">
+				<img class="producto__img" src="vista/img/snack.webp">
+				<div class="producto__info">
+					<p class="producto__descrip">Cheezels - Evercrisp</p>
+					<p class="precio">$ 1.200</p>
+					<form class="form__cantidad">
+						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+						<button class="boton__cantidad">
+							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+						</button>
+						
+					</form>
+					
+				</div>
+			</div>
+
+			<div class="producto">
+				<img class="producto__img" src="vista/img/snack.webp">
+				<div class="producto__info">
+					<p class="producto__descrip">Cheezels - Evercrisp</p>
+					<p class="precio">$ 1.200</p>
+					<form class="form__cantidad">
+						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+						<button class="boton__cantidad">
+							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+						</button>
+						
+					</form>
+					
+				</div>
+			</div>
+
+			<div class="producto">
+				<img class="producto__img" src="vista/img/snack.webp">
+				<div class="producto__info">
+					<p class="producto__descrip">Cheezels - Evercrisp</p>
+					<p class="precio">$ 1.200</p>
+					<form class="form__cantidad">
+						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+						<button class="boton__cantidad">
+							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+						</button>
+						
+					</form>
+					
+				</div>
+			</div>
+
+			<div class="producto">
+				<img class="producto__img" src="vista/img/snack.webp">
+				<div class="producto__info">
+					<p class="producto__descrip">Cheezels - Evercrisp</p>
+					<p class="precio">$ 1.200</p>
+					<form class="form__cantidad">
+						<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
+						<button class="boton__cantidad">
+							<span class="material-icons material-icons-outlined">add_shopping_cart</span>
+						</button>
+						
+					</form>
+					
+				</div>
+			</div>
+
+
+
+
+		</section>
+
 			<p id="ValorId"></p>		
 			<p id="ValorName"></p>	
 	</main>
