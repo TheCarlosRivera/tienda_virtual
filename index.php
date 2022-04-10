@@ -27,23 +27,35 @@
 <body>
 
 	<header class="header ">
+
 		<div class="header__interno">
+
 			<div class="header__principal">
+
 				<div class="header__titulo">
-					<a href="">
+					<a href="index.php">
 					<img class="header__titulo-img" src="vista/img/logo_bsale.webp">
 					</a>
+
+					<!-- boton para abrir menu -->
 					<div class="icon__menu">
 					<span id="open__menu" class="open__menu material-icons material-icons-outlined" onclick="OpenMenu();">menu</span>
 					</div>
 				</div>
+
+				<!-- buscador de productos -->
 				<div class="header__buscador">
 					<form class="form__buscar">
-						<input class="input__buscar" type="text" name="buscar" placeholder="Buscar">
-						<span class="icon__search material-icons material-icons-outlined">search</span>
+						<input class="input__buscar" type="text" name="producto" placeholder="Buscar" required>
+						<button class="icon__search">
+							<span class="material-icons material-icons-outlined">search</span>
+						</button>
 					</form>
 				</div>
+
 			</div>
+
+			<!-- filtros de productos -->
 			<nav class="nav__filtro" id="nav__filtro">
 				<div class="icon__menu">
 					<p class="titulo__filtro">Filtros:</p>
@@ -59,51 +71,40 @@
 					<li class="filtros" onclick="filtrar('vodka');">Vodka</li>
 				</ul>
 			</nav>
+
 		</div>
+
 	</header>
 
+	<!-- cuerpo de la tienda virtual -->
 	<main class="main">
+			<div class="resul" id="resul"></div>
 			<section id="contenedor__productos" class="contenedor__productos"></section>
 	</main>
 
-
 	<?php
 
-		if(isset($_GET['id']) && !empty($_GET['id']))
+		//validando si existe la variable producto
+		if(isset($_GET['producto']) && !empty($_GET['producto']))
 		{
+			?>
+				<script type="text/javascript">
 
+					//ejeuctando llamado de API
+					url = "http://localhost/tienda_virtual/modelo/<?php echo "?producto=".$_GET['producto'] ?>";
+					obtenerDatos(url);
+
+				</script>
+			<?php
 		}
 		else
 		{
 		?>
-			<script>
-					fetch('http://localhost/tienda_virtual/modelo/')
-					.then(datos=>datos.json())
-					.then(datos=>{
-							var resul = document.getElementById('contenedor__productos');
-							resul.innerHTML = "";
-						 
-							for(let dato of datos)
-							{
-								resul.innerHTML += `<div class='producto'>
-								<div class="contenedor__img">
-								<img class="producto__img" src="${dato.url_image}">
-								</div>
-								<div class="producto__info">
-								<p class="producto__descrip">${dato.name}</p>
-								<p class='precio'>$ ${dato.price}</p>
-								<form class="form__cantidad">
-								<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-								<button class="boton__cantidad">
-								<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-								/button>					
-								</form>					
-								</div>
-								</div>`;
+			<script> 
 
-							}
-					});
-
+				//ejeuctando llamado de API
+				url = 'http://localhost/tienda_virtual/modelo/';
+				obtenerDatos(url); 
 			</script>
 		<?php			
 		}
@@ -111,44 +112,7 @@
 
 	?>
 
-	<script>
-
-		function filtrar(e)
-		{
-			$("#contentLoader").removeClass("ocultar");
-			fetch('http://localhost/tienda_virtual/modelo/?filtro='+e)
-			.then(datos=>datos.json())
-			.then(datos=>{
-							var resul = document.getElementById('contenedor__productos');
-							resul.innerHTML = "";
-						 
-							for(let dato of datos)
-							{
-								resul.innerHTML += `<div class='producto'>
-								<div class="contenedor__img">
-								<img class="producto__img" src="${dato.url_image}">
-								</div>
-								<div class="producto__info">
-								<p class="producto__descrip">${dato.name}</p>
-								<p class='precio'>$ ${dato.price}</p>
-								<form class="form__cantidad">
-								<input class="input__cantidad" type="text" name="cantidad" placeholder="1">
-								<button class="boton__cantidad">
-								<span class="material-icons material-icons-outlined">add_shopping_cart</span>
-								/button>					
-								</form>					
-								</div>
-								</div>`;
-
-							}
-				$("#contentLoader").addClass("ocultar");
-			});
-
-		}
-
-	</script>
-
-
+<!-- loader -->
 <section id="contentLoader">
 	<div class="lds-ellipsis">
 		<div></div>
