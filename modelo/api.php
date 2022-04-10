@@ -26,7 +26,7 @@
 	 	}
 
 	 	//validando que la variable filtro esta definida y no vacia
-	 	else if(isset($_GET['filtro']))
+	 	else if(isset($_GET['filtro']) && !empty($_GET['filtro']))
 	 	{
 	 		//ejecutando sentencia sql
 	 		$this->consul = $this->ConexSQL->prepare("SELECT * FROM product INNER JOIN category ON product.category=category.id WHERE category.name=:filtro AND url_image != '' ");

@@ -12,15 +12,6 @@ class Conexion extends PDO
 	private $user = "bsale_test";
 	private $pass = "bsale_test";
 
-/*
-	//declaracion y asignacion de las credenciales de conexion
-	public $ConexSQL;
-	private $tipo_db = "mysql";
-	private $host = "localhost";
-	private $db = "bsale_test";
-	private $user = "root";
-	private $pass = "SuperPassUser";
-*/
 	//realizando la conexion a la base de datos con PDO
 	public function __construct()
 	{

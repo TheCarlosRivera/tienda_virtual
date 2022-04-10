@@ -56,13 +56,14 @@ function CloseMenu()
 								for(let dato of datos)
 								{
 									//imprimiendo la información en los campos declarados.
+																			
 									resul.innerHTML += `<div class='producto'>
 									<div class="contenedor__img">
 									<img class="producto__img" src="${dato.url_image}">
 									</div>
 									<div class="producto__info">
 									<p class="producto__descrip">${dato.name}</p>
-									<p class='precio'>$ ${dato.price}</p>
+									<p class='precio'>$ ${Number(dato.price).toLocaleString("de-DE")}</p>
 									<form class="form__cantidad">
 									<input class="input__cantidad" type="text" name="cantidad" placeholder="1" required>
 									<button class="boton__cantidad">
