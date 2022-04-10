@@ -11,7 +11,7 @@ Muestra Tienda virtual desarrollada para Bsale, mediante la implementación de u
 
 ![](https://github.com/TheCarlosRivera/tienda_virtual/blob/ee484d55f3d60e8fbc467188249b0d57d64afb3c/vista/img/preview.png?raw=true)
 
-Ver tienda Aqui.
+Ver tienda [Aqui](http://www.carlosriveradeveloper.cl/apps/tienda_virtual "Aqui").
 
 #### Tecnologías utilizadas
 1. HTML
